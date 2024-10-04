@@ -1,0 +1,392 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html,
+body {
+    height: 100%;
+    font-family: Arial, sans-serif;
+}
+
+a {
+    text-decoration: none;
+}
+
+.container {
+    display: flex;
+    height: 100vh;
+}
+
+/* Sidebar---------------------------------- */
+
+.main-sidebar {
+    width: 328px;
+    height: 100%;
+    background-color: #100F10;
+    border-right: 1px solid #7a787827;
+}
+
+.main-sidebar h1 {
+    text-align: center;
+    margin: 48px 0;
+}
+
+.main-sidebar h1 a {
+    font-size: 24px;
+    color: #AD241B;
+}
+
+.nav-icon {
+    color: #AD241B;
+    width: 36px;
+    display: inline-block;
+}
+
+.main-sidebar .nav {
+    margin-left: 32px;
+}
+
+.main-sidebar .mini-title {
+    color: #a4a4a4;
+    padding: 28px 0;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+}
+
+.main-sidebar .nav li {
+    list-style-type: none;
+    padding: 6px 0;
+    width: calc(100% + 32px);
+    position: relative;
+    left: -32px;
+}
+
+.main-sidebar .nav li:hover {
+    cursor: pointer;
+    border-left: 4px solid #AD241B;
+}
+
+.nav .menu {
+    border-bottom: 1px solid #7a787827;
+    margin-right: 32px;
+    min-height: 516px;
+}
+
+.nav .sidebar-footer {
+    margin-top: 16px;
+}
+
+.main-sidebar .nav li a {
+    color: #a4a4a4;
+    position: relative;
+    left: 32px;
+    letter-spacing: 1.5px;
+}
+
+.main-sidebar .nav li a:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+/* ----Main content------------------------------ */
+
+.main-content {
+    background-color: #100F10;
+    width: calc(100% - 328px);
+    /* Chiếm phần còn lại của container */
+    height: 100%;
+    /* Đặt chiều cao 100% cho main-content */
+    padding: 36px;
+    overflow-y: auto;
+    /* Thêm thanh cuộn nếu cần */
+}
+
+#header {
+    margin-top: 52px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#header .user {
+    display: flex;
+    justify-content: space-between;
+}
+
+#header .user .user-infomation {
+    margin-left: 28px;
+}
+
+#header .header-icon {
+    color: #a4a4a4;
+    font-size: 18px;
+}
+
+#header .header-icon:hover {
+    cursor: pointer;
+    color: #fff;
+}
+
+#header .search-btn {
+    height: 40px;
+    width: 300px;
+    display: flex;
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #100F10;
+    border: 1px solid #7a787827;
+    border-radius: 16px;
+    align-items: center;
+}
+
+.search-btn .search-icon {
+    color: #fff;
+    font-size: 18px;
+}
+
+#header .search-btn:hover input {
+    width: 300px;
+}
+
+#header .search-btn input {
+    width: 0;
+    color: #fff;
+    outline: none;
+    border: none;
+    font-weight: 500;
+    transition: 1.5s;
+    background: transparent;
+}
+
+/* -Slider-------------------------------------- */
+
+#slider {
+    position: relative;
+    width: 100%;
+    max-height: 360px;
+    overflow: hidden;
+    margin-top: 28px;
+    border-radius: 20px;
+}
+
+#slider .slider-container {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.slider-container .slide a:hover {
+    opacity: 60%;
+}
+
+#slider .slide {
+    min-width: 100%;
+    box-sizing: border-box;
+}
+
+#slider .slide img {
+    width: 100%;
+}
+
+#slider .caption {
+    position: absolute;
+    bottom: 20px;
+    left: 20px;
+    color: #fff;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+button.prev,
+button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+/* ----------------------------------- */
+#upcoming-movie {
+    margin-top: 32px;
+    color: #fff;
+    text-align: center;
+}
+
+.section-title {
+    font-size: 24px;
+    text-transform: uppercase;
+    margin-bottom: 32px;
+    color: #fff;
+}
+
+#upcoming-movie .movie-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+    gap: 20px;
+}
+
+.movie {
+    background-color: #7a787827;
+    padding: 15px;
+    border-radius: 10px;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+
+.movie img:hover {
+    transform: scale(1.05);
+    cursor: pointer;
+}
+
+.movie a {
+    text-decoration: none;
+}
+
+#upcoming-movie .movie img {
+    width: 100%;
+    max-height: 124px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+.movie h3 {
+    margin: 15px 0 10px;
+    font-size: 18px;
+    color: #fff;
+    transition: transform 0.3s ease;
+}
+
+.movie h3:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.movie .category {
+    color: #a4a4a4;
+}
+
+/* -movie----------------------------------------------------- */
+
+#movie {
+    text-align: center;
+    margin-top: 32px;
+
+}
+
+#movie .movie-grid {
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(232px, 1fr));
+    gap: 20px;
+}
+
+#movie .movie img {
+    width: 100%;
+    min-height: 300px;
+    border-radius: 10px;
+    transition: transform 0.5s ease;
+}
+
+/* Toast---------------------------------- */
+.toast {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 2px;
+    border-left: 4px solid green;
+    padding: 20px 0;
+    box-shadow: 0 5px 8px rgba(0, 0, 0, 0.4);
+    transition: all linear .3s;
+}
+
+@keyframes slideInLeft {
+    from {
+        transform: translateX(calc(100% + 32px));
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+.toast__icon {
+    font-size: 24px;
+    color: green;
+    padding: 0 8px;
+}
+
+.toast__body {
+    flex-grow: 1;
+}
+
+.toast__close {
+    font-size: 24px;
+    color: #777;
+    padding: 0 8px;
+}
+
+.toast__close:hover {
+    cursor: pointer;
+    opacity: 70%;
+}
+
+.toast+.toast {
+    margin-top: 24px;
+}
+
+.toast--success {
+    border-color: green;
+}
+
+.toast--success .toast__icon {
+    color: green;
+}
+
+.toast--info {
+    border-color: blue;
+}
+
+.toast--info .toast__icon {
+    color: blue;
+}
+
+.toast--error {
+    border-color: #AD241B;
+}
+
+.toast--error .toast__icon {
+    color: #AD241B;
+}
+
+#toast {
+    position: fixed;
+    top: 32px;
+    right: 32px;
+    z-index: 1;
+}
